@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import BasicMap from "./components/BasicMap";
 import EduMap from "./components/EduMap";
 import JobMap from "./components/JobMap";
-import InputMaker from "./components/input";
 
 class App extends Component {
   constructor() {
@@ -27,25 +26,9 @@ class App extends Component {
     this.handleChange = this.handleChange.bind(this);
   }
 
-  handleChange = (e, inputVar) => {
+  handleChange = (e, name) => {
     this.setState({
       [e.target.name]: e.target.value,
-    });
-  };
-
-  handleNameChange = (e) => {
-    this.setState({
-      name: e.target.value,
-    });
-  };
-  handleEmailChange = (e) => {
-    this.setState({
-      email: e.target.value,
-    });
-  };
-  handlePhoneChange = (e) => {
-    this.setState({
-      phone: e.target.value,
     });
   };
 
@@ -62,22 +45,6 @@ class App extends Component {
     });
   };
 
-  handleSchoolChange = (e) => {
-    this.setState({
-      school: e.target.value,
-    });
-  };
-  handleDegreeChange = (e) => {
-    this.setState({
-      degree: e.target.value,
-    });
-  };
-  handleGradChange = (e) => {
-    this.setState({
-      gradyr: e.target.value,
-    });
-  };
-
   onEduSubmit = (e) => {
     e.preventDefault();
     this.setState({
@@ -88,32 +55,6 @@ class App extends Component {
       school: "",
       degree: "",
       gradyr: "",
-    });
-  };
-
-  handleCompanyChange = (e) => {
-    this.setState({
-      company: e.target.value,
-    });
-  };
-  handleTitleChange = (e) => {
-    this.setState({
-      title: e.target.value,
-    });
-  };
-  handleStartChange = (e) => {
-    this.setState({
-      startyr: e.target.value,
-    });
-  };
-  handleEndChange = (e) => {
-    this.setState({
-      endyr: e.target.value,
-    });
-  };
-  handleDutiesChange = (e) => {
-    this.setState({
-      duties: e.target.value,
     });
   };
 
@@ -167,13 +108,13 @@ class App extends Component {
               value={name}
               required
             ></input>
-            {/* <InputMaker type="text" id="nameInput" value={name} name="name" /> */}
             <label htmlfor="emailInput">Email:</label>
             <input
               type="email"
               class="form-control"
               id="emailInput"
-              onChange={this.handleEmailChange}
+              onChange={this.handleChange}
+              name="email"
               value={email}
               required
             ></input>
@@ -182,7 +123,8 @@ class App extends Component {
               type="tel"
               class="form-control"
               id="phoneInput"
-              onChange={this.handlePhoneChange}
+              onChange={this.handleChange}
+              name="phone"
               value={phone}
               required
             ></input>
@@ -206,7 +148,8 @@ class App extends Component {
               type="text"
               class="form-control"
               id="schoolInput"
-              onChange={this.handleSchoolChange}
+              onChange={this.handleChange}
+              name="school"
               value={school}
               required
             ></input>
@@ -215,7 +158,8 @@ class App extends Component {
               type="text"
               class="form-control"
               id="degreeInput"
-              onChange={this.handleDegreeChange}
+              onChange={this.handleChange}
+              name="degree"
               value={degree}
               required
             ></input>
@@ -224,7 +168,8 @@ class App extends Component {
               type="text"
               class="form-control"
               id="gradyrInput"
-              onChange={this.handleGradChange}
+              onChange={this.handleChange}
+              name="gradyr"
               value={gradyr}
               required
             ></input>
@@ -248,7 +193,8 @@ class App extends Component {
               type="text"
               class="form-control"
               id="companyInput"
-              onChange={this.handleCompanyChange}
+              onChange={this.handleChange}
+              name="company"
               value={company}
               required
             ></input>
@@ -257,7 +203,8 @@ class App extends Component {
               type="text"
               class="form-control"
               id="titleInput"
-              onChange={this.handleTitleChange}
+              onChange={this.handleChange}
+              name="title"
               value={title}
               required
             ></input>
@@ -266,7 +213,8 @@ class App extends Component {
               type="date"
               class="form-control"
               id="startyrInput"
-              onChange={this.handleStartChange}
+              onChange={this.handleChange}
+              name="startyr"
               value={startyr}
               required
             ></input>
@@ -275,17 +223,18 @@ class App extends Component {
               type="date"
               class="form-control"
               id="endyrInput"
-              onChange={this.handleEndChange}
+              onChange={this.handleChange}
+              name="endyr"
               value={endyr}
               required
             ></input>
             <label htmlFor="dutiesInput">Job Responsibilities:</label>
             <textarea
-              name="response"
               rows="6"
               class="form-control"
               id="dutiesInput"
-              onChange={this.handleDutiesChange}
+              onChange={this.handleChange}
+              name="duties"
               value={duties}
               required
             ></textarea>
