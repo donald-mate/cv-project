@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import BasicMap from "./components/BasicMap";
 import EduMap from "./components/EduMap";
 import JobMap from "./components/JobMap";
+import InputMaker from "./components/input";
 
 class App extends Component {
   constructor() {
@@ -23,7 +24,14 @@ class App extends Component {
       duties: "",
       job: [],
     };
+    this.handleChange = this.handleChange.bind(this);
   }
+
+  handleChange = (e, inputVar) => {
+    this.setState({
+      [e.target.name]: e.target.value,
+    });
+  };
 
   handleNameChange = (e) => {
     this.setState({
@@ -154,10 +162,12 @@ class App extends Component {
               type="text"
               class="form-control"
               id="nameInput"
-              onChange={this.handleNameChange}
+              onChange={this.handleChange}
+              name="name"
               value={name}
               required
             ></input>
+            {/* <InputMaker type="text" id="nameInput" value={name} name="name" /> */}
             <label htmlfor="emailInput">Email:</label>
             <input
               type="email"
