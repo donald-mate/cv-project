@@ -9,18 +9,29 @@ class App extends Component {
 
     this.state = {
       name: "",
+      nameEdit: "",
       email: "",
+      emailEdit: "",
       phone: "",
+      phoneEdit: "",
       basic: [],
       school: "",
+      schoolEdit: "",
       degree: "",
+      degreeEdit: "",
       gradyr: "",
+      gradyrEdit: "",
       education: [],
       company: "",
+      companyEdit: "",
       title: "",
+      titleEdit: "",
       startyr: "",
+      startyrEdit: "",
       endyr: "",
+      endyrEdit: "",
       duties: "",
+      dutiesEdit: "",
       job: [],
     };
     this.handleChange = this.handleChange.bind(this);
@@ -35,6 +46,9 @@ class App extends Component {
   onBasicSubmit = (e) => {
     e.preventDefault();
     this.setState({
+      nameEdit: this.state.name,
+      emailEdit: this.state.email,
+      phoneEdit: this.state.phone,
       basic: this.state.basic
         .concat(this.state.name)
         .concat(this.state.email)
@@ -48,6 +62,9 @@ class App extends Component {
   onBasicEdit = (e) => {
     e.preventDefault();
     this.setState({
+      name: this.state.nameEdit,
+      email: this.state.emailEdit,
+      phone: this.state.phoneEdit,
       basic: [],
     });
   };
@@ -55,6 +72,9 @@ class App extends Component {
   onEduSubmit = (e) => {
     e.preventDefault();
     this.setState({
+      schoolEdit: this.state.school,
+      degreeEdit: this.state.degree,
+      gradyrEdit: this.state.gradyr,
       education: this.state.education
         .concat(this.state.school)
         .concat(this.state.degree)
@@ -68,6 +88,9 @@ class App extends Component {
   onEduEdit = (e) => {
     e.preventDefault();
     this.setState({
+      school: this.state.schoolEdit,
+      degree: this.state.degreeEdit,
+      gradyr: this.state.gradyrEdit,
       education: [],
     });
   };
@@ -75,6 +98,11 @@ class App extends Component {
   onJobSubmit = (e) => {
     e.preventDefault();
     this.setState({
+      companyEdit: this.state.company,
+      titleEdit: this.state.title,
+      startyrEdit: this.state.startyr,
+      endyrEdit: this.state.endyr,
+      dutiesEdit: this.state.duties,
       job: this.state.job
         .concat(this.state.company)
         .concat(this.state.title)
@@ -92,6 +120,11 @@ class App extends Component {
   onJobEdit = (e) => {
     e.preventDefault();
     this.setState({
+      company: this.state.companyEdit,
+      title: this.state.titleEdit,
+      startyr: this.state.startyrEdit,
+      endyr: this.state.endyrEdit,
+      duties: this.state.dutiesEdit,
       job: [],
     });
   };
