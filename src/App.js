@@ -45,6 +45,13 @@ class App extends Component {
     });
   };
 
+  onBasicEdit = (e) => {
+    e.preventDefault();
+    this.setState({
+      basic: [],
+    });
+  };
+
   onEduSubmit = (e) => {
     e.preventDefault();
     this.setState({
@@ -55,6 +62,13 @@ class App extends Component {
       school: "",
       degree: "",
       gradyr: "",
+    });
+  };
+
+  onEduEdit = (e) => {
+    e.preventDefault();
+    this.setState({
+      education: [],
     });
   };
 
@@ -72,6 +86,13 @@ class App extends Component {
       startyr: "",
       endyr: "",
       duties: "",
+    });
+  };
+
+  onJobEdit = (e) => {
+    e.preventDefault();
+    this.setState({
+      job: [],
     });
   };
 
@@ -130,7 +151,7 @@ class App extends Component {
             ></input>
           </div>
           <div className="form-group">
-            <button type="submit" className="btn btn-primary">
+            <button className="btn btn-secondary" onClick={this.onBasicEdit}>
               Edit
             </button>
           </div>
@@ -175,7 +196,7 @@ class App extends Component {
             ></input>
           </div>
           <div className="form-group">
-            <button type="submit" className="btn btn-primary">
+            <button className="btn btn-secondary" onClick={this.onEduEdit}>
               Edit
             </button>
           </div>
@@ -240,7 +261,7 @@ class App extends Component {
             ></textarea>
           </div>
           <div className="form-group">
-            <button type="submit" className="btn btn-primary">
+            <button className="btn btn-secondary" onClick={this.onJobEdit}>
               Edit
             </button>
           </div>
